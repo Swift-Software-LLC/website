@@ -1,0 +1,109 @@
+@import 'fonts';
+
+.main {
+  font: 100% 'Work Sans';
+  width: 60vw;
+  margin: 0 auto 0 auto;
+  text-align: center;
+
+  h1 {
+    font-weight: 600;
+    font-size: 75px;
+  }
+}
+
+@keyframes popin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main__gifs {
+  display: block;
+  height: 80vh;
+
+  img {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    animation-name: popin;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  img:nth-child(1) {
+    left: 50%;
+    transform: translate(-50%);
+    width: 20%;
+    animation-delay: 0.3s;
+  }
+
+  img:nth-child(2) {
+    left: 30%;
+    margin-top: 5%;
+    width: 15%;
+    animation-delay: 1s;
+  }
+
+  img:nth-child(3) {
+    left: 55%;
+    margin-top: 3%;
+    width: 15%;
+    animation-delay: 1.5s;
+  }
+
+  img:nth-child(4) {
+    left: 43%;
+    margin-top: 8%;
+    width: 15%;
+    animation-delay: 2s;
+  }
+
+  // Gif 5 is fine where it is
+  img:nth-child(5) {
+    width: 18%;
+    animation-delay: 2.5s;
+  }
+
+  img:nth-child(6) {
+    left: 57%;
+    margin-top: 15%;
+    width: 15%;
+    animation-delay: 3s;
+  }
+
+  img:nth-child(7) {
+    left: 22%;
+    margin-top: 15%;
+    width: 20%;
+    animation-delay: 3.5s;
+  }
+
+  img:nth-child(8) {
+    left: 40%;
+    margin-top: 22%;
+    width: 15%;
+    animation-delay: 4s;
+  }
+
+  img:nth-child(9) {
+    left: 18%;
+    margin-top: 8%;
+    width: 18%;
+    animation-delay: 4.5s;
+  }
+
+  img:nth-child(10) {
+    left: 20%;
+    margin-top: 20%;
+    width: 15%;
+    animation-delay: 5s;
+  }
+}
+
+html {
+  cursor: wait;
+}
