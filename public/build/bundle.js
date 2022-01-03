@@ -45,10 +45,6 @@ var app = (function () {
     function space() {
         return text(' ');
     }
-    function listen(node, event, handler, options) {
-        node.addEventListener(event, handler, options);
-        return () => node.removeEventListener(event, handler, options);
-    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -70,14 +66,6 @@ var app = (function () {
     let current_component;
     function set_current_component(component) {
         current_component = component;
-    }
-    function get_current_component() {
-        if (!current_component)
-            throw new Error('Function called outside component initialization');
-        return current_component;
-    }
-    function onMount(fn) {
-        get_current_component().$$.on_mount.push(fn);
     }
 
     const dirty_components = [];
@@ -309,19 +297,6 @@ var app = (function () {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
     }
-    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
-        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
-        if (has_prevent_default)
-            modifiers.push('preventDefault');
-        if (has_stop_propagation)
-            modifiers.push('stopPropagation');
-        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
-        const dispose = listen(node, event, handler, options);
-        return () => {
-            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
-            dispose();
-        };
-    }
     function attr_dev(node, attribute, value) {
         attr(node, attribute, value);
         if (value == null)
@@ -356,84 +331,76 @@ var app = (function () {
         $inject_state() { }
     }
 
-    window.requestAnimationFrame=window.requestAnimationFrame||(function(callback,element){setTimeout(callback,1000/60);});function timeStamp(){if(window.performance.now){return window.performance.now()}else {return Date.now()}}function isVisible(el){var r=el.getBoundingClientRect();return r.top+r.height>=0&&r.left+r.width>=0&&r.bottom-r.height<=(window.innerHeight||document.documentElement.clientHeight)&&r.right-r.width<=(window.innerWidth||document.documentElement.clientWidth)}function Star(x,y,z){this.x=x;this.y=y;this.z=z;this.size=0.5+Math.random();}function WarpSpeed(targetId,config){this.targetId=targetId;if(WarpSpeed.RUNNING_INSTANCES==undefined){WarpSpeed.RUNNING_INSTANCES={};}if(WarpSpeed.RUNNING_INSTANCES[targetId]){WarpSpeed.RUNNING_INSTANCES[targetId].destroy();}config=config||{};if(typeof config=="string"){try{config=JSON.parse(config);}catch(e){config={};}}this.SPEED=config.speed==undefined||config.speed<0?0.7:config.speed;this.TARGET_SPEED=config.targetSpeed==undefined||config.targetSpeed<0?this.SPEED:config.targetSpeed;this.SPEED_ADJ_FACTOR=config.speedAdjFactor==undefined?0.03:config.speedAdjFactor<0?0:config.speedAdjFactor>1?1:config.speedAdjFactor;this.DENSITY=config.density==undefined||config.density<=0?0.7:config.density;this.USE_CIRCLES=config.shape==undefined?true:config.shape=="circle";this.DEPTH_ALPHA=config.depthFade==undefined?true:config.depthFade;this.WARP_EFFECT=config.warpEffect==undefined?true:config.warpEffect;this.WARP_EFFECT_LENGTH=config.warpEffectLength==undefined?5:config.warpEffectLength<0?0:config.warpEffectLength;this.STAR_SCALE=config.starSize==undefined||config.starSize<=0?3:config.starSize;this.BACKGROUND_COLOR=config.backgroundColor==undefined?"hsl(263,45%,7%)":config.backgroundColor;var canvas=document.getElementById(this.targetId);canvas.width=1;canvas.height=1;this.STAR_COLOR=config.starColor==undefined?"#FFFFFF":config.starColor;this.prevW=-1;this.prevH=-1;this.stars=[];for(var i=0;i<this.DENSITY*1000;i+=1){this.stars.push(new Star((Math.random()-0.5)*1000,(Math.random()-0.5)*1000,1000*Math.random()));}this.lastMoveTS=timeStamp();this.drawRequest=null;this.LAST_RENDER_T=0;WarpSpeed.RUNNING_INSTANCES[targetId]=this;this.draw();}WarpSpeed.prototype={constructor:WarpSpeed,draw:function(){var TIME=timeStamp();if(!(document.getElementById(this.targetId))){this.destroy();return}this.move();var canvas=document.getElementById(this.targetId);if(!this.PAUSED&&isVisible(canvas)){if(this.prevW!=canvas.clientWidth||this.prevH!=canvas.clientHeight){canvas.width=(canvas.clientWidth<10?10:canvas.clientWidth)*(window.devicePixelRatio||1);canvas.height=(canvas.clientHeight<10?10:canvas.clientHeight)*(window.devicePixelRatio||1);}this.size=(canvas.height<canvas.width?canvas.height:canvas.width)/(10/(this.STAR_SCALE<=0?0:this.STAR_SCALE));if(this.WARP_EFFECT){this.maxLineWidth=this.size/30;}var ctx=canvas.getContext("2d");ctx.globalAlpha=1.0;ctx.fillStyle=this.BACKGROUND_COLOR;ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle=this.STAR_COLOR;for(var i=0;i<this.stars.length;i+=1){var s=this.stars[i];var xOnDisplay=s.x/s.z,yOnDisplay=s.y/s.z;if(!this.WARP_EFFECT&&(xOnDisplay<-0.5||xOnDisplay>0.5||yOnDisplay<-0.5||yOnDisplay>0.5)){continue}var size=s.size*this.size/s.z;if(size<0.3){continue;}if(this.DEPTH_ALPHA){var alpha=(1000-s.z)/1000;ctx.globalAlpha=alpha<0?0:alpha>1?1:alpha;}if(this.WARP_EFFECT){ctx.beginPath();var x2OnDisplay=s.x/(s.z+this.WARP_EFFECT_LENGTH*this.SPEED),y2OnDisplay=s.y/(s.z+this.WARP_EFFECT_LENGTH*this.SPEED);if(x2OnDisplay<-0.5||x2OnDisplay>0.5||y2OnDisplay<-0.5||y2OnDisplay>0.5){continue}ctx.moveTo(canvas.width*(xOnDisplay+0.5)-size/2,canvas.height*(yOnDisplay+0.5)-size/2);ctx.lineTo(canvas.width*(x2OnDisplay+0.5)-size/2,canvas.height*(y2OnDisplay+0.5)-size/2);ctx.lineWidth=size>this.maxLineWidth?this.maxLineWidth:size;if(this.USE_CIRCLES){ctx.lineCap="round";}else {ctx.lineCap="butt";}ctx.strokeStyle=ctx.fillStyle;ctx.stroke();}else if(this.USE_CIRCLES){ctx.beginPath();ctx.arc(canvas.width*(xOnDisplay+0.5)-size/2,canvas.height*(yOnDisplay+0.5)-size/2,size/2,0,2*Math.PI);ctx.fill();}else {ctx.fillRect(canvas.width*(xOnDisplay+0.5)-size/2,canvas.height*(yOnDisplay+0.5)-size/2,size,size);}}this.prevW=canvas.clientWidth;this.prevH=canvas.clientHeight;}if(this.drawRequest!=-1){this.drawRequest=requestAnimationFrame(this.draw.bind(this));}this.LAST_RENDER_T=timeStamp()-TIME;},move:function(){var t=timeStamp(),speedMulF=(t-this.lastMoveTS)/(1000/60);this.lastMoveTS=t;if(this.PAUSED){return}var speedAdjF=Math.pow(this.SPEED_ADJ_FACTOR<0?0:this.SPEED_ADJ_FACTOR>1?1:this.SPEED_ADJ_FACTOR,1/speedMulF);this.SPEED=this.TARGET_SPEED*speedAdjF+this.SPEED*(1-speedAdjF);if(this.SPEED<0){this.SPEED=0;}var speed=this.SPEED*speedMulF;for(var i=0;i<this.stars.length;i+=1){var s=this.stars[i];s.z-=speed;while(s.z<1){s.z+=1000;s.x=(Math.random()-0.5)*s.z;s.y=(Math.random()-0.5)*s.z;}}},destroy:function(targetId){if(targetId){if(WarpSpeed.RUNNING_INSTANCES[targetId]){WarpSpeed.RUNNING_INSTANCES[targetId].destroy();}}else {try{cancelAnimationFrame(this.drawRequest);}catch(e){this.drawRequest=-1;}WarpSpeed.RUNNING_INSTANCES[this.targetId]=undefined;}},pause:function(){this.PAUSED=true;},resume:function(){this.PAUSED=false;}};WarpSpeed.destroy=WarpSpeed.prototype.destroy;
-
     /* src/App.svelte generated by Svelte v3.44.3 */
+
     const file = "src/App.svelte";
 
     function create_fragment(ctx) {
-    	let scrolling = false;
-
-    	let clear_scrolling = () => {
-    		scrolling = false;
-    	};
-
-    	let scrolling_timeout;
-    	let main;
-    	let h1;
-    	let t0;
-    	let i;
-    	let t2;
-    	let canvas_1;
-    	let mounted;
-    	let dispose;
-    	add_render_callback(/*onwindowscroll*/ ctx[1]);
+    	let section0;
+    	let div;
+    	let h10;
+    	let t1;
+    	let h2;
+    	let t3;
+    	let a;
+    	let t5;
+    	let section1;
+    	let h11;
 
     	const block = {
     		c: function create() {
-    			main = element("main");
-    			h1 = element("h1");
-    			t0 = text("Pure ");
-    			i = element("i");
-    			i.textContent = "Speed";
-    			t2 = space();
-    			canvas_1 = element("canvas");
-    			add_location(i, file, 17, 24, 494);
-    			attr_dev(h1, "class", "title svelte-13upl4v");
-    			add_location(h1, file, 17, 1, 471);
-    			set_style(canvas_1, "width", "100%");
-    			set_style(canvas_1, "height", "100%");
-    			attr_dev(canvas_1, "id", "warpspeed");
-    			add_location(canvas_1, file, 18, 2, 514);
-    			attr_dev(main, "class", "svelte-13upl4v");
-    			add_location(main, file, 16, 0, 463);
+    			section0 = element("section");
+    			div = element("div");
+    			h10 = element("h1");
+    			h10.textContent = "We bring your startup to life";
+    			t1 = space();
+    			h2 = element("h2");
+    			h2.textContent = "Launch faster, with a solid minimum viable product";
+    			t3 = space();
+    			a = element("a");
+    			a.textContent = "What we do";
+    			t5 = space();
+    			section1 = element("section");
+    			h11 = element("h1");
+    			h11.textContent = "what we do";
+    			attr_dev(h10, "class", "title svelte-pzmc81");
+    			add_location(h10, file, 5, 4, 93);
+    			attr_dev(h2, "class", "subtitle svelte-pzmc81");
+    			add_location(h2, file, 6, 4, 150);
+    			attr_dev(a, "href", "#what-we-do");
+    			attr_dev(a, "class", "button");
+    			set_style(a, "margin-top", "2rem");
+    			add_location(a, file, 7, 4, 231);
+    			attr_dev(div, "class", "splashscreen_headings svelte-pzmc81");
+    			add_location(div, file, 4, 2, 53);
+    			attr_dev(section0, "class", "splashscreen svelte-pzmc81");
+    			add_location(section0, file, 3, 0, 20);
+    			add_location(h11, file, 12, 2, 358);
+    			attr_dev(section1, "id", "what-we-do");
+    			add_location(section1, file, 11, 0, 330);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, main, anchor);
-    			append_dev(main, h1);
-    			append_dev(h1, t0);
-    			append_dev(h1, i);
-    			append_dev(main, t2);
-    			append_dev(main, canvas_1);
-
-    			if (!mounted) {
-    				dispose = listen_dev(window, "scroll", () => {
-    					scrolling = true;
-    					clearTimeout(scrolling_timeout);
-    					scrolling_timeout = setTimeout(clear_scrolling, 100);
-    					/*onwindowscroll*/ ctx[1]();
-    				});
-
-    				mounted = true;
-    			}
+    			insert_dev(target, section0, anchor);
+    			append_dev(section0, div);
+    			append_dev(div, h10);
+    			append_dev(div, t1);
+    			append_dev(div, h2);
+    			append_dev(div, t3);
+    			append_dev(div, a);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, section1, anchor);
+    			append_dev(section1, h11);
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*scrollY*/ 1 && !scrolling) {
-    				scrolling = true;
-    				clearTimeout(scrolling_timeout);
-    				scrollTo(window.pageXOffset, /*scrollY*/ ctx[0]);
-    				scrolling_timeout = setTimeout(clear_scrolling, 100);
-    			}
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(main);
-    			mounted = false;
-    			dispose();
+    			if (detaching) detach_dev(section0);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(section1);
     		}
     	};
 
@@ -448,51 +415,16 @@ var app = (function () {
     	return block;
     }
 
-    function instance($$self, $$props, $$invalidate) {
+    function instance($$self, $$props) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
-    	let scrollY;
-    	let canvas;
-
-    	onMount(() => {
-    		// Add warp effect canvas
-    		canvas = new WarpSpeed('warpspeed',
-    		{
-    				"speed": 4,
-    				"speedAdjFactor": 0.03,
-    				"density": 1.5,
-    				"shape": "square",
-    				"warpEffect": true,
-    				"warpEffectLength": 7.5,
-    				"depthFade": true,
-    				"starSize": 3,
-    				"backgroundColor": "hsl(263,45%,7%)",
-    				"starColor": "#FFFFFF"
-    			});
-    	});
-
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
-    	function onwindowscroll() {
-    		$$invalidate(0, scrollY = window.pageYOffset);
-    	}
-
-    	$$self.$capture_state = () => ({ onMount, scrollY, WarpSpeed, canvas });
-
-    	$$self.$inject_state = $$props => {
-    		if ('scrollY' in $$props) $$invalidate(0, scrollY = $$props.scrollY);
-    		if ('canvas' in $$props) canvas = $$props.canvas;
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [scrollY, onwindowscroll];
+    	return [];
     }
 
     class App extends SvelteComponentDev {
