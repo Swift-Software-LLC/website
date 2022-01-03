@@ -24,6 +24,14 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
+    }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
@@ -337,60 +345,99 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let section0;
-    	let div;
+    	let div2;
+    	let div0;
     	let h10;
     	let t1;
     	let h2;
+    	let span0;
     	let t3;
+    	let t4;
     	let a;
     	let t5;
+    	let span1;
+    	let t7;
+    	let div1;
+    	let img;
+    	let img_src_value;
+    	let t8;
     	let section1;
     	let h11;
 
     	const block = {
     		c: function create() {
     			section0 = element("section");
-    			div = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
     			h10 = element("h1");
     			h10.textContent = "We bring your startup to life";
     			t1 = space();
     			h2 = element("h2");
-    			h2.textContent = "Launch faster, with a solid minimum viable product";
-    			t3 = space();
+    			span0 = element("span");
+    			span0.textContent = "Launch fast";
+    			t3 = text(" with a solid minimum viable product");
+    			t4 = space();
     			a = element("a");
-    			a.textContent = "What we do";
-    			t5 = space();
+    			t5 = text("Find out what we do ");
+    			span1 = element("span");
+    			span1.textContent = "➔";
+    			t7 = space();
+    			div1 = element("div");
+    			img = element("img");
+    			t8 = space();
     			section1 = element("section");
     			h11 = element("h1");
     			h11.textContent = "what we do";
-    			attr_dev(h10, "class", "title svelte-pzmc81");
-    			add_location(h10, file, 5, 4, 93);
-    			attr_dev(h2, "class", "subtitle svelte-pzmc81");
-    			add_location(h2, file, 6, 4, 150);
+    			attr_dev(h10, "class", "title svelte-1i5y475");
+    			add_location(h10, file, 6, 6, 142);
+    			set_style(span0, "color", "#26C485");
+    			add_location(span0, file, 7, 27, 222);
+    			attr_dev(h2, "class", "subtitle svelte-1i5y475");
+    			add_location(h2, file, 7, 6, 201);
+    			set_style(span1, "display", "inline-block");
+    			set_style(span1, "transform", "rotate(90deg)");
+    			set_style(span1, "margin-left", "0.5rem");
+    			add_location(span1, file, 8, 89, 401);
     			attr_dev(a, "href", "#what-we-do");
     			attr_dev(a, "class", "button");
     			set_style(a, "margin-top", "2rem");
-    			add_location(a, file, 7, 4, 231);
-    			attr_dev(div, "class", "splashscreen_headings svelte-pzmc81");
-    			add_location(div, file, 4, 2, 53);
-    			attr_dev(section0, "class", "splashscreen svelte-pzmc81");
+    			add_location(a, file, 8, 6, 318);
+    			attr_dev(div0, "class", "splashscreen_content_headings svelte-1i5y475");
+    			add_location(div0, file, 5, 4, 92);
+    			if (!src_url_equal(img.src, img_src_value = "/img/img-19.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "");
+    			attr_dev(img, "class", "svelte-1i5y475");
+    			add_location(img, file, 11, 6, 567);
+    			attr_dev(div1, "class", "splashscreen_content_image svelte-1i5y475");
+    			add_location(div1, file, 10, 4, 520);
+    			attr_dev(div2, "class", "splashscreen_content");
+    			add_location(div2, file, 4, 2, 53);
+    			attr_dev(section0, "class", "splashscreen svelte-1i5y475");
     			add_location(section0, file, 3, 0, 20);
-    			add_location(h11, file, 12, 2, 358);
-    			attr_dev(section1, "id", "what-we-do");
-    			add_location(section1, file, 11, 0, 330);
+    			add_location(h11, file, 17, 2, 665);
+    			attr_dev(section1, "class", "what-we-do svelte-1i5y475");
+    			add_location(section1, file, 16, 0, 634);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
-    			append_dev(section0, div);
-    			append_dev(div, h10);
-    			append_dev(div, t1);
-    			append_dev(div, h2);
-    			append_dev(div, t3);
-    			append_dev(div, a);
-    			insert_dev(target, t5, anchor);
+    			append_dev(section0, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, h10);
+    			append_dev(div0, t1);
+    			append_dev(div0, h2);
+    			append_dev(h2, span0);
+    			append_dev(h2, t3);
+    			append_dev(div0, t4);
+    			append_dev(div0, a);
+    			append_dev(a, t5);
+    			append_dev(a, span1);
+    			append_dev(div2, t7);
+    			append_dev(div2, div1);
+    			append_dev(div1, img);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, section1, anchor);
     			append_dev(section1, h11);
     		},
@@ -399,7 +446,7 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section0);
-    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(section1);
     		}
     	};
