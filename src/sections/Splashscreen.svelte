@@ -15,8 +15,7 @@
 <style>
   /* Phone styling */
   section {
-    width: 90vw;
-    height: 90vh;
+    height: 85vh;
     margin: 8rem auto 0 auto;
   }
 
@@ -45,7 +44,6 @@
   /* Tablet and laptop styling */
   @media screen and (min-width: 768px) {
     section {
-      width: 90vw;
       height: 95vh;
       margin: 0 auto 0 auto;
     }
@@ -80,10 +78,6 @@
 
   /* Desktop styling */
   @media screen and (min-width: 1200px) {
-    section {
-      width: 60vw;
-    }
-
     .splashscreen_content {
       gap: 10%;
     }

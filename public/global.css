@@ -56,3 +56,29 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Mobile */
+section {
+  width: 90vw;
+  margin: 0 auto 0 auto;
+}
+
+.header {
+  font-size: 2rem;
+  margin: 0 auto 2rem 0;
+  /* text-align: center; */
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .header {
+    font-size: 2.25rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  section {
+    width: 60vw;
+  }
+}
