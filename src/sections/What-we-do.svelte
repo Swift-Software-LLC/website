@@ -1,12 +1,12 @@
 <section id="what-we-do">
   <div class="grid">
     <div class="card">
-      <img src="" alt="">
-      <h1>Build your MVP</h1>
+      <img src="/img/tools.png" alt="">
+      <h1 class="gradient-text">Build your MVP</h1>
     </div>
     <div class="card">
       <img src="" alt="">
-      <h1>Rapid Feedback Loops</h1>
+      <h1 class="gradient-text">Rapid Feedback Loops</h1>
     </div>
     <div class="card">
       <img src="" alt="">
@@ -40,14 +40,15 @@
     text-align: center;
   }
 
+  .card > img {
+    display: block;
+    width: 60%;
+    margin: 0 auto 0 auto;
+  }
+
   .card > h1 {
     font-size: 2rem;
     padding: 2rem;
-
-    background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
   }
 
   /* Tablet and laptop styling */

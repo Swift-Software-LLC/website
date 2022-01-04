@@ -1,14 +1,11 @@
 <section>
   <div class="splashscreen_content">
     <div class="splashscreen_content_image">
-      <img src="/img/img-14.png" alt="">
+      <img src="/img/rocket.png" alt="">
     </div>
     <div class="splashscreen_content_headings">
       <h1 class="title">We bring your startup to life</h1>
-      <h2 class="subtitle"><span style="background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;">Launch fast</span> with a solid minimum viable product</h2>
+      <h2 class="subtitle"><span class="gradient-text">Launch fast</span> with an <span class="gradient-text">amazing</span> minimum viable product</h2>
       <a href="#what-we-do" class="button" style="margin-top: 2rem;">Find out what we do <span style="display: inline-block; transform: rotate(90deg); margin-left: 0.5rem;">&#10132;</span></a>
     </div>
   </div>
@@ -28,13 +25,15 @@
   }
 
   .splashscreen_content_image {
-    width: 75%;
+    width: 100%;
     overflow: hidden;
-    margin: 5vh auto 0 auto;
+    margin: 5vh auto 5vh auto;
   }
 
   .splashscreen_content_image img {
-    width: 100%;
+    display: block;
+    width: 20%;
+    margin: 0 auto 0 auto;
   }
 
   .title {
@@ -57,13 +56,17 @@
     .splashscreen_content_headings {
       padding: 40vh 0 0 0;
       float: left;
-      width: 70%;
+      width: 60%;
     }
 
     .splashscreen_content_image {
       float: right;
-      width: 30%;
-      margin: 40vh 0 0 0;
+      width: 40%;
+      margin: 40vh auto 0 auto;
+    }
+
+    .splashscreen_content_image img {
+      width: 25%;
     }
 
     .title {
@@ -80,9 +83,18 @@
     section {
       width: 70vw;
     }
+
+    .splashscreen_content_headings {
+      width: 70%;
+    }
     
     .splashscreen_content_image {
-      margin: 25vh 0 0 0;
+      margin: 20% auto 0 auto;
+      width: 30%;
+    }
+
+    .splashscreen_content_image img {
+      width: 50%;
     }
 
     .title {
