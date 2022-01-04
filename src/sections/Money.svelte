@@ -1,4 +1,4 @@
-<section>
+<section style="width: 100%;">
   <img src="/img/euro.png" alt="">
   <section id="cost">
     <h1 class="header">Cost</h1>
@@ -44,35 +44,52 @@
       margin: 0 auto 0 auto;
     }
 
-    section > img {
+    section img:nth-child(1) {
       position: absolute;
       display: block;
-      width: 20%;
+      width: 15%;
       top: 25%;
+      left: 2rem;
     }
 
     section img:nth-child(3) {
       position: absolute;
       display: block;
-      width: 20%;
+      width: 15%;
       top: 70%;
-      right: 0;
+      right: 2rem;
     }
   }
 
   /* Desktop */
   @media screen and (min-width: 1200px) {
     #cost {
-      width: 30%;
+      width: 20%;
     }
 
-    section > img {
-      width: 15%;
+    section img:nth-child(1) {
+      width: 10%;
+      left: 8rem;
     }
 
     section img:nth-child(3) {
-      width: 15%;
+      width: 10%;
       top: 50%;
+      right: 8rem;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    section img:nth-child(1) {
+      width: 8%;
+      top: 10%;
+      left: 15%;
+    }
+
+    section img:nth-child(3) {
+      width: 8%;
+      top: 40%;
+      right: 15%;
     }
   }
 </style>
