@@ -1,19 +1,44 @@
 <section id="what-we-do">
+  <!-- <div class="bulletpoints">
+    <div class="bulletpoints__item">
+      <div class="flex-container">
+        <div>
+          <h1>Building</h1>
+          <p>We use a modern tech stack to build your MVP as quickly as possible. We know that being first to market can be life or death for a startup.</p>
+          <p>We build quickly and efficiently. Without making compromises to expandability and security.</p>
+        </div>
+        <img src="/img/tools (angle).png" alt="">
+      </div>
+    </div>
+
+    <div class="bulletpoints__item">
+      <div class="flex-container">
+        <img src="/img/bubble.png" alt="">
+        <div>
+          <h1>Rapid Feedback</h1>
+          <p>We constantly communicate with you to make sure the product is just as you want. We have weekly meetings discussing the progress that has been made.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <div class="grid">
-    <div class="card">
-      <img src="/img/tools.png" alt="">
-      <h1 class="gradient-text">Build your MVP</h1>
+    <div class="grid__item">
+      <h1>Building</h1>
+      <p>We use a modern tech stack to build your MVP as quickly as possible. We know that being first to market can be life or death for a startup.</p>
+      <p>We build quickly and efficiently. Without making compromises to expandability and security.</p>
     </div>
-    <div class="card">
-      <img src="" alt="">
-      <h1 class="gradient-text">Rapid Feedback Loops</h1>
+
+    <div class="grid__item">
+      <h1>Rapid Feedback</h1>
+      <p>We constantly communicate with you to make sure the product is just as you want. We have weekly meetings discussing the progress that has been made.</p>
     </div>
-    <div class="card">
-      <img src="" alt="">
-      <h1>Fast Communication</h1>
+
+    <div class="grid__item">
+      <h1>Test</h1>
+      <p>Test</p>
     </div>
-    <img src="" alt="">
-    <div class="card card__wide"></div>
+
   </div>
 </section>
 
@@ -26,29 +51,18 @@
     margin: 0 auto 0 auto;
   }
 
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin: 1rem 0 1rem 0;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 1rem;
-  }
-
-  .card {
-    width: auto;
-    height: 35vh;
-    background-color: #F1F1F1;
-    border-radius: 1rem;
-    text-align: center;
-  }
-
-  .card > img {
-    display: block;
-    width: 60%;
-    margin: 0 auto 0 auto;
-  }
-
-  .card > h1 {
-    font-size: 2rem;
-    padding: 2rem;
   }
 
   /* Tablet and laptop styling */
@@ -58,26 +72,19 @@
     }
 
     .grid {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       column-gap: 1rem;
-    }
-
-    .card__wide {
-      grid-row-start: span 1;
-      grid-row-end: span 1;
-      grid-column-start: span 3;
-      grid-column-end: span 3;
     }
   }
 
   /* Desktop styling */
   @media screen and (min-width: 1200px) {
     section {
-      width: 70vw;
+      width: 60vw;
     }
 
-    .card {
-      height: 50vh;
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
