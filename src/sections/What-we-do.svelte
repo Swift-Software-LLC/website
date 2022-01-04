@@ -1,42 +1,21 @@
 <section id="what-we-do">
-  <!-- <div class="bulletpoints">
-    <div class="bulletpoints__item">
-      <div class="flex-container">
-        <div>
-          <h1>Building</h1>
-          <p>We use a modern tech stack to build your MVP as quickly as possible. We know that being first to market can be life or death for a startup.</p>
-          <p>We build quickly and efficiently. Without making compromises to expandability and security.</p>
-        </div>
-        <img src="/img/tools (angle).png" alt="">
-      </div>
-    </div>
-
-    <div class="bulletpoints__item">
-      <div class="flex-container">
-        <img src="/img/bubble.png" alt="">
-        <div>
-          <h1>Rapid Feedback</h1>
-          <p>We constantly communicate with you to make sure the product is just as you want. We have weekly meetings discussing the progress that has been made.</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="grid">
     <div class="grid__item">
       <h1>Building</h1>
-      <p>We use a modern tech stack to build your MVP as quickly as possible. We know that being first to market can be life or death for a startup.</p>
-      <p>We build quickly and efficiently. Without making compromises to expandability and security.</p>
+      <p>We know being first to market is important. And we know how to build good software. We will turn your idea into a real product, that your users will love.</p>
+      <p>We use a modern tech stack, focused on quick development, extendability and security. Building something quickly does not mean we slack on code quality, speed, and security.</p>
     </div>
 
     <div class="grid__item">
       <h1>Rapid Feedback</h1>
-      <p>We constantly communicate with you to make sure the product is just as you want. We have weekly meetings discussing the progress that has been made.</p>
+      <p>To make sure we build exactly what you envision, we maintain a constant communication channel. We believe great communication is at the core of every great product. </p>
+      <p>We work using Scrum and Agile, in sprints of two weeks, at the end of which we have an improved, and working product.</p>
     </div>
 
     <div class="grid__item">
-      <h1>Test</h1>
-      <p>Test</p>
+      <h1>Delivery</h1>
+      <p>Once you are happy with the product, we help you serve it to your first users. If there are big bugs or issues we will of course fix them.</p>
+      <p>After this, we provide no more development work. Now it’s your turn to build out your own software team, and to really accelerate the growth of your startup!</p>
     </div>
 
   </div>
