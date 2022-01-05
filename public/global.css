@@ -27,12 +27,12 @@ a {
 
 @font-face {
   font-family: Aktiv;
-  src: url('/fonts/Aktiv-regular.woff2');
+  src: url('/fonts/aktiv-regular.woff2');
 }
 
 @font-face {
   font-family: Aktiv;
-  src: url('/fonts/Aktiv-bold.woff2');
+  src: url('/fonts/aktiv-bold.woff2');
   font-weight: bold;
 }
 
