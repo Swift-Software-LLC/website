@@ -1,6 +1,7 @@
 <section style="width: 100%; background-color: #000; color: #fff;">
   <section id="contact-us">
     <h1 class="header">Contact us</h1>
+    <p>Send us an email to schedule a call, and we will get back to you within 24 hours.</p>
     <div id="contact-details">
       <div id="contact-details__item">
         <p>Email:</p>

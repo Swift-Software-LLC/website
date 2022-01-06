@@ -12,5 +12,4 @@ import WhyAMvp from './sections/Why-a-mvp.svelte';
 <WhyAMvp/>
 <WhatWeDo/>
 <Timeline/>
-<Money/>
 <Contact/>

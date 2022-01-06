@@ -7,7 +7,7 @@
     <div class="splashscreen_content_headings">
       <h1 class="title">We bring your startup to life</h1>
       <h2 class="subtitle"><span class="gradient-text">Launch fast</span> with a minimum viable product your <span class="gradient-text">users will love</span></h2>
-      <a href="#what-we-do" class="button" style="margin-top: 2rem;">Schedule a call <span style="display: inline-block; transform: rotate(-45deg); margin-left: 0.5rem;">&#10132;</span></a>
+      <a href="#contact-us" class="button" style="margin-top: 2rem;">Schedule a call <span style="display: inline-block; transform: rotate(-45deg); margin-left: 0.5rem;">&#10132;</span></a>
     </div>
   </div>
 </section>
