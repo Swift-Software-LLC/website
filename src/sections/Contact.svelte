@@ -1,7 +1,7 @@
 <section style="width: 100%; background-color: #000; color: #fff;">
-  <section id="contact-us">
+  <section id="contact-us" style="text-align: center;">
     <h1 class="header">Contact us</h1>
-    <p>Send us an email to schedule a call, and we will get back to you within 24 hours.</p>
+    <a href="" class="button" style="background-color: #fff; color: #000; text-align: center; margin: 0 auto 2rem auto;" onclick={"Calendly.initPopupWidget({url: 'https://calendly.com/swiftsoftware/introduction-call'});return false;"}>Schedule a call <span style="display: inline-block; transform: rotate(-45deg); margin-left: 0.5rem;">&#10132;</span></a>
     <div id="contact-details">
       <div id="contact-details__item">
         <p>Email:</p>
