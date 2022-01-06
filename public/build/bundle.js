@@ -601,10 +601,11 @@ var app = (function () {
     			set_style(span2, "display", "inline-block");
     			set_style(span2, "transform", "rotate(-45deg)");
     			set_style(span2, "margin-left", "0.5rem");
-    			add_location(span2, file$4, 9, 85, 558);
-    			attr_dev(a, "href", "#contact-us");
+    			add_location(span2, file$4, 9, 188, 661);
+    			attr_dev(a, "href", "");
     			attr_dev(a, "class", "button");
     			set_style(a, "margin-top", "2rem");
+    			attr_dev(a, "onclick", "Calendly.initPopupWidget({url: 'https://calendly.com/swiftsoftware/introduction-call'});return false;");
     			add_location(a, file$4, 9, 6, 479);
     			attr_dev(div1, "class", "splashscreen_content_headings svelte-yd74re");
     			add_location(div1, file$4, 6, 4, 205);
