@@ -41,66 +41,66 @@
     margin: 0.5rem 0 0.5rem 0;
   }
 
+  
   .timeline__item {
-    border-top: 2px solid;
-    margin:0; padding: 30px;
+    font-size: 1em;
+    line-height: 1.75em;
+    border-top: 3px solid;
+    border-image: linear-gradient(111deg, #f85d7f, #6b81fa);
+    border-image-slice: 1;
+    border-width: 3px;
+    margin: 0;
+    padding: 40px;
     counter-increment: section;
     position: relative;
-    border-color: #6b81fa !important;
+    color: #000;
   }
 
-  .timeline__item:nth-child(even):before {
+  /* Numbers */
+  .timeline__item::before {
     content: counter(section);
-    right: 100%; 
-    margin-right: -20px;
-    position: absolute;
-    border-radius: 50%;
-    padding: 10px;
-    height: 20px;
-    width: 20px;
-    background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
-    text-align:center;
-    color: white;
-    font-size: 110%;
+      position: absolute;
+      border-radius: 50%;
+      padding: 10px;
+      height: 1.25em;
+      width: 1.25em;
+      background-color: black;
+      text-align: center;
+      line-height: 1.25em;
+      color: white;
+      font-size: 1.25em;
   }
 
-  .timeline__item:nth-child(odd):before {
-    content: counter(section);
+  /* odd number borders */
+  .timeline__item:nth-child(odd) {
+    border-right: 3px solid;
+    padding-left: 0;
+    border-radius: 50px;
+  }
+
+  .timeline__item:nth-child(odd)::before {
     left: 100%; 
     margin-left: -20px;
-    position: absolute;
-    border-radius: 50%;
-    padding: 10px;
-    height: 20px;
-    width: 20px;
-    background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
-    text-align:center;
-    color: white;
-    font-size: 110%;
   }
 
+  /* even number borders */
   .timeline__item:nth-child(even) {
-    border-left: 2px solid;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    margin-right: 30px;
+    border-left: 3px solid;
     padding-right: 0;
+    border-radius: 50px;
   }
 
-  .timeline__item:nth-child(odd) {
-    border-right: 2px solid;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    margin-left: 30px; 
-    padding-left: 0;
+  .timeline__item:nth-child(even)::before {
+    right: 100%; 
+    margin-right: -20px;
   }
 
+  /* handle first and last */
   .timeline__item:first-child {
     border-top: 0;
     border-top-right-radius:0;
     border-top-left-radius:0;
   }
-
   .timeline__item:last-child {
     border-bottom-right-radius:0;
     border-bottom-left-radius:0;
