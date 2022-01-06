@@ -1,6 +1,6 @@
 <section style="width: 100%; background-color: #000; color: #fff;">
   <section id="what-we-do">
-    <h1 class="header">What we do</h1>
+    <h1 class="header">How we do it</h1>
     <div class="grid">
       <div class="grid__item">
         <h1>Build</h1>
