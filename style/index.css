@@ -187,7 +187,8 @@ section {
 .timeline__item:nth-child(odd) {
   border-right: 3px solid;
   padding-left: 0;
-  border-radius: 50px;
+  border-bottom: 0;
+  border-left: 0;
 }
 
 .timeline__item:nth-child(odd)::before {
@@ -199,7 +200,8 @@ section {
 .timeline__item:nth-child(even) {
   border-left: 3px solid;
   padding-right: 0;
-  border-radius: 50px;
+  border-bottom: 0;
+  border-right: 0;
 }
 
 .timeline__item:nth-child(even)::before {
