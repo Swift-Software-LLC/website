@@ -102,7 +102,7 @@ section {
   padding-top: 0.5rem;
 }
 
-/* Why a MVP section */
+/* Why a MVP */
 #why-a-mvp {
   width: 100%;
   background-color: #000;
@@ -160,6 +160,12 @@ section {
   #splashscreen__content__headings h2 {
     font-size: 1.5rem;
   }
+
+  /* Why a MVP */
+  #why-a-mvp__content .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
 }
 
 /* Desktop */
@@ -191,5 +197,10 @@ section {
 
   #splashscreen__content__headings h2 {
     font-size: 2rem;
+  }
+
+  /* Why a MVP */
+  #why-a-mvp__content {
+    width: 40%;
   }
 }
