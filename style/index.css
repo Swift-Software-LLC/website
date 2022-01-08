@@ -144,6 +144,81 @@ section {
   margin: 1rem 0 1rem 0;
 }
 
+/* Timeline */
+#timeline {
+  width: 75%;
+  margin: 2rem auto 2rem auto;
+}
+
+.timeline__item p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.timeline__item {
+  font-size: 1em;
+  line-height: 1.75em;
+  border-top: 3px solid;
+  border-image: linear-gradient(111deg, #f85d7f, #6b81fa);
+  border-image-slice: 1;
+  border-width: 3px;
+  margin: 0;
+  padding: 40px;
+  counter-increment: section;
+  position: relative;
+  color: #000;
+}
+
+/* Numbers */
+.timeline__item::before {
+  content: counter(section);
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    height: 1.25em;
+    width: 1.25em;
+    background-color: black;
+    text-align: center;
+    line-height: 1.25em;
+    color: white;
+    font-size: 1.25em;
+}
+
+/* odd number borders */
+.timeline__item:nth-child(odd) {
+  border-right: 3px solid;
+  padding-left: 0;
+  border-radius: 50px;
+}
+
+.timeline__item:nth-child(odd)::before {
+  left: 100%; 
+  margin-left: -20px;
+}
+
+/* even number borders */
+.timeline__item:nth-child(even) {
+  border-left: 3px solid;
+  padding-right: 0;
+  border-radius: 50px;
+}
+
+.timeline__item:nth-child(even)::before {
+  right: 100%; 
+  margin-right: -20px;
+}
+
+/* handle first and last */
+.timeline__item:first-child {
+  border-top: 0;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+}
+.timeline__item:last-child {
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .header {
@@ -186,6 +261,11 @@ section {
   #splashscreen__content__headings h2 {
     font-size: 1.5rem;
   }
+
+  /* Timeline */
+  #timeline {
+    width: 40%;
+  }
 }
 
 /* Desktop */
@@ -227,5 +307,10 @@ section {
   /* What we do */
   #what-we-do__content .grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* Timeline */
+  #timeline {
+    width: 20%;
   }
 }
