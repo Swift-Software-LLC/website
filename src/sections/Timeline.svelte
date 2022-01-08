@@ -41,7 +41,6 @@
     margin: 0.5rem 0 0.5rem 0;
   }
 
-  
   .timeline__item {
     font-size: 1em;
     line-height: 1.75em;
