@@ -241,7 +241,7 @@ section {
 }
 
 #team .grid__item p:last-of-type {
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 #team img {
@@ -273,13 +273,13 @@ section {
 
 #socials img {
   width: 100%;
-  filter: grayscale(100%);
   transition: all 0.2s ease-in-out;
+  filter: grayscale(100%);
 }
 
 #socials img:hover {
   filter: none;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 /* Cost */
