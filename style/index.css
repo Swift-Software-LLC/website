@@ -1,4 +1,5 @@
 /* Loading font */
+
 @font-face {
   font-family: Aktiv;
   src: url('fonts/aktiv-regular.woff2');
@@ -10,7 +11,9 @@
   font-weight: bold;
 }
 
+
 /* General style */
+
 html {
   scroll-behavior: smooth;
 }
@@ -30,7 +33,9 @@ a {
   color: #6b81fa;
 }
 
+
 /* Mobile */
+
 .button {
   display: inline-block;
   background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
@@ -40,7 +45,6 @@ a {
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: 600;
-
   transition: all 0.25s ease-in-out;
 }
 
@@ -74,7 +78,9 @@ section {
   grid-template-columns: 1fr;
 }
 
+
 /* Splashscreen */
+
 #splashscreen {
   height: 85vh;
   margin: 8rem auto 0 auto;
@@ -102,7 +108,9 @@ section {
   padding-top: 0.5rem;
 }
 
+
 /* Why a MVP */
+
 #why-a-mvp {
   width: 100%;
   background-color: #0D0C1D;
@@ -123,7 +131,9 @@ section {
   margin: 1rem 0 1rem 0;
 }
 
+
 /* What we do */
+
 #what-we-do {
   width: 100%;
   background-color: #0D0C1D;
@@ -144,7 +154,9 @@ section {
   margin: 1rem 0 1rem 0;
 }
 
+
 /* Timeline */
+
 #timeline {
   width: 75%;
   margin: 2rem auto 2rem auto;
@@ -169,7 +181,9 @@ section {
   color: #000;
 }
 
+
 /* Numbers */
+
 .timeline__item::before {
   content: counter(section);
   position: absolute;
@@ -184,7 +198,9 @@ section {
   font-size: 1.25em;
 }
 
+
 /* odd number borders */
+
 .timeline__item:nth-child(odd) {
   border-right: 3px solid;
   padding-left: 0;
@@ -193,11 +209,13 @@ section {
 }
 
 .timeline__item:nth-child(odd)::before {
-  left: 100%; 
+  left: 100%;
   margin-left: -20px;
 }
 
+
 /* even number borders */
+
 .timeline__item:nth-child(even) {
   border-left: 3px solid;
   padding-right: 0;
@@ -206,11 +224,13 @@ section {
 }
 
 .timeline__item:nth-child(even)::before {
-  right: 100%; 
+  right: 100%;
   margin-right: -20px;
 }
 
+
 /* handle first and last */
+
 .timeline__item:first-child {
   border-top: 0;
 }
@@ -237,7 +257,9 @@ section {
   margin: 0 auto 0 auto;
 }
 
+
 /* Team */
+
 #team {
   margin: 2rem auto 2rem auto;
 }
@@ -298,7 +320,9 @@ section {
   transform: scale(1.1);
 }
 
+
 /* Cost */
+
 #cost {
   width: 100%;
   background-color: #0D0C1D;
@@ -316,7 +340,9 @@ section {
   margin: 1rem 0 1rem 0;
 }
 
+
 /* Contact */
+
 #contact {
   width: 100%;
   background-color: #0D0C1D;
@@ -342,24 +368,23 @@ section {
   text-align: right;
 }
 
+
 /* Tablet */
+
 @media screen and (min-width: 768px) {
   .header {
     margin-top: 2rem;
     font-size: 2.25rem;
   }
-
   .grid {
     grid-template-columns: 1fr 1fr;
     column-gap: 1.5rem;
   }
-
   /* Splashscreen */
   #splashscreen {
     height: 95vh;
     margin-top: 0;
   }
-
   #splashscreen__content {
     height: 100%;
     width: 100%;
@@ -368,108 +393,92 @@ section {
     align-items: center;
     justify-content: center;
   }
-
   #splashscreen__content__image {
     width: 50%;
   }
-
   #splashscreen__content__image img {
     width: 40%;
   }
-
   #splashscreen__content__headings h1 {
     font-size: 3rem;
   }
-  
   #splashscreen__content__headings h2 {
     font-size: 1.5rem;
   }
-
   /* Timeline */
   #timeline {
     width: 40%;
   }
-
   /* Team */
   #team .grid {
     gap: 2rem;
     grid-auto-rows: 1fr;
   }
-
+  #team__founders .grid {
+    grid-template-columns: 1fr 1fr;
+  }
   #socials {
     margin-top: auto;
   }
-
   /* Contact */
   #contact__content {
     width: 40%;
   }
 }
 
+
 /* Desktop */
+
 @media screen and (min-width: 1200px) {
   section {
     width: 60vw;
   }
-
   /* Splashscreen */
   #splashscreen__content {
     gap: 10%;
   }
-
   #splashscreen__content__headings {
     width: 60%;
   }
-
   #splashscreen__content__image {
     width: 30%;
   }
-
   #splashscreen__content__image img {
     width: 55%;
   }
-
   #splashscreen__content__headings h1 {
     font-size: 4rem;
   }
-
   #splashscreen__content__headings h2 {
     font-size: 2rem;
   }
-
   /* Why a MVP */
   #why-a-mvp__content {
     width: 40%;
   }
-
   /* What we do */
   #what-we-do__content .grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   /* Timeline */
   #timeline {
     width: 20%;
   }
-
   /* Team */
-  #team .grid {
-    grid-template-columns: 1fr 1fr 1fr;
+  #team__founders {
+    width: 60%;
+    margin: 0 auto 0 auto;
   }
-
-  #team img {
-    width: 70%;
+  #team__founders img {
+    width: 80%;
   }
-
   #socials img {
     width: 100%;
   }
-
   /* Cost */
   #cost__content {
     width: 40%;
   }
-
   /* Contact */
   #contact__content {
     width: 20%;
