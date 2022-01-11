@@ -442,15 +442,15 @@ section {
     width: 40%;
   }
   /* Team */
+  #team {
+    width: 70%;
+  }
   #team .grid {
-    gap: 2rem;
+    gap: 1rem;
     grid-auto-rows: 1fr;
   }
-  #team__founders .grid {
+  #team .grid {
     grid-template-columns: 1fr 1fr;
-  }
-  #socials {
-    margin-top: auto;
   }
   /* Contact */
   #contact {
@@ -498,15 +498,12 @@ section {
     width: 20%;
   }
   /* Team */
-  #team__founders {
-    width: 60%;
+  #team {
+    width: 40%;
     margin: 0 auto 0 auto;
   }
-  #team__founders img {
+  #team img {
     width: 80%;
-  }
-  #socials img {
-    width: 100%;
   }
   /* Cost */
   #cost__content {
