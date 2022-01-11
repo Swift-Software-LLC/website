@@ -120,21 +120,36 @@ section {
 /* Why a MVP */
 
 #why-a-mvp {
-  width: 100%;
-  background-color: #0D0C1D;
-  color: #fff;
-}
-
-#why-a-mvp__content {
   margin: 0 auto 0 auto;
   padding: 2rem 0 2rem 0;
 }
 
-#why-a-mvp__content .grid .grid__item h1 {
+#why-a-mvp .grid {
+  gap: 1rem;
+}
+
+#why-a-mvp .grid .grid__item {
+  background-color: #edeef0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0px 1px 0px rgb(0 0 0 / 7%), 0px 1px 4px rgb(0 0 0 / 5%), 0px 10px 30px rgb(17 56 31 / 6%);
+}
+
+#why-a-mvp .grid .grid__item .grid__item__content {
+  margin: 1rem;
+}
+
+#why-a-mvp .grid .grid__item .grid__item__content .grid__item__content__emoji {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#why-a-mvp .grid .grid__item h1 {
   font-size: 1.5rem;
 }
 
-#why-a-mvp__content .grid .grid__item p {
+#why-a-mvp .grid .grid__item p {
   font-size: 1.25rem;
   margin: 1rem 0 1rem 0;
 }
@@ -471,7 +486,7 @@ section {
     font-size: 2rem;
   }
   /* Why a MVP */
-  #why-a-mvp__content {
+  #why-a-mvp {
     width: 40%;
   }
   /* What we do */
