@@ -349,8 +349,6 @@ section {
 
 #cost {
   width: 100%;
-  background-color: #0D0C1D;
-  color: #fff;
 }
 
 #cost__content {
@@ -378,19 +376,19 @@ section {
 /* Contact */
 
 #contact {
-  width: 100%;
-  background-color: #0D0C1D;
-  color: #fff;
+  margin-bottom: 4rem;
 }
 
 #contact__content {
-  margin: 0 auto 0 auto;
-  padding: 2rem 0 4rem 0;
+  border-radius: 0.5rem;
+  background-color: #edeef0;
+  padding: 2rem;
+  width: auto;
 }
 
 #contact__content p {
   font-size: 1.25rem;
-  margin: 0.5rem 0 0.5rem 0;
+  margin-bottom: 0.25rem;
 }
 
 .contact__content__item {
@@ -455,8 +453,9 @@ section {
     margin-top: auto;
   }
   /* Contact */
-  #contact__content {
-    width: 40%;
+  #contact {
+    width: 60%;
+    padding: 1rem;
   }
 }
 
@@ -514,7 +513,8 @@ section {
     width: 40%;
   }
   /* Contact */
-  #contact__content {
-    width: 20%;
+  #contact {
+    width: 30%;
+    padding: 1rem;
   }
 }
