@@ -385,6 +385,10 @@ footer p {
   text-align: center;
 }
 
+footer p:first-of-type {
+  margin-bottom: 1rem;
+}
+
 
 /* Tablet */
 
