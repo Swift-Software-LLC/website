@@ -375,14 +375,14 @@ section {
 
 footer {
   width: 90vw;
-  margin: 0 auto 0 auto;
-  text-align: center;
+  margin: 0 auto 2rem auto;
 }
 
 footer p {
   font-size: 1rem;
   line-height: 1.5rem;
   opacity: 0.75;
+  text-align: center;
 }
 
 
