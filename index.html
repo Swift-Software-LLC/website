@@ -182,25 +182,13 @@
   <section id="contact">
     <section id="contact__content">
       <h1 class="header" style="margin-top: 0;">Contact us</h1>
-      <p style="text-align: center; margin: 0;">
-        <a href="" class="button" style="margin: 0 auto 2rem auto;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/swiftsoftware/introduction-call'});return false;">Schedule a call <span style="display: inline-block; transform: rotate(-45deg); margin-left: 0.5rem;">&#10132;</span></a>
-      </p>
-      <div class="contact__content__item">
-        <p>Email:</p>
-        <p><a href="mailto:contact@swiftsoftware.nl">contact@swiftsoftware.nl</a></p>
+      <div id="contact__content__options">
+        <a href="" class="button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/swiftsoftware/introduction-call'});return false;">Schedule a call <span style="display: inline-block; transform: rotate(-45deg); margin-left: 0.5rem;">&#10132;</span></a>
+        <a href="mailto:contact@swiftsoftware.nl" class="button" style="padding: 0.65rem;"><img src="style/img/Email.png" alt="Email icon"></a>
       </div>
-      <div class="contact__content__item">
-        <p>Phone:</p>
-        <p>(+31) 637290533</p>
-      </div>
-      <div class="contact__content__item">
-        <p>KVK:</p>
-        <p>81934580</p>
-      </div>
-      <div class="contact__content__item">
-        <p>VAT:</p>
-        <p>NL003621004B30</p>
-      </div>
+      <!-- <p style="text-align: center; margin: 0;">
+      </p> -->
+
     </section>
   </section>
   <!-- AOS.js begin -->
@@ -215,5 +203,22 @@
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <!-- Calendly link widget end -->
+
+<!-- <div class="contact__content__item">
+  <p>Email:</p>
+  <p><a href="mailto:contact@swiftsoftware.nl">contact@swiftsoftware.nl</a></p>
+</div>
+<div class="contact__content__item">
+  <p>Phone:</p>
+  <p>(+31) 637290533</p>
+</div>
+<div class="contact__content__item">
+  <p>KVK:</p>
+  <p>81934580</p>
+</div>
+<div class="contact__content__item">
+  <p>VAT:</p>
+  <p>NL003621004B30</p>
+</div> -->
 
 </html>

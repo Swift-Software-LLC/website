@@ -324,26 +324,6 @@ section {
   margin: 0.25rem 0 0 0;
 }
 
-#socials {
-  width: 10rem;
-  margin: 0 auto 0 auto;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-#socials img {
-  width: 100%;
-  transition: all 0.2s ease-in-out;
-  filter: grayscale(100%);
-}
-
-#socials img:hover {
-  filter: none;
-  transform: scale(1.1);
-}
-
 
 /* Cost */
 
@@ -384,20 +364,27 @@ section {
   background-color: #edeef0;
   padding: 2rem;
   width: auto;
+  overflow: hidden;
 }
 
-#contact__content p {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.contact__content__item {
+#contact__content #contact__content__options {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
 }
 
-.contact__content__item p:nth-child(2) {
-  text-align: right;
+#contact__content #contact__content__options a {
+  flex: 1 1 auto;
+}
+
+#contact__content #contact__content__options img {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 auto 0 auto;
+  display: block;
 }
 
 
@@ -454,8 +441,7 @@ section {
   }
   /* Contact */
   #contact {
-    width: 60%;
-    padding: 1rem;
+    width: 50%;
   }
 }
 
@@ -511,7 +497,7 @@ section {
   }
   /* Contact */
   #contact {
-    width: 30%;
+    width: 20%;
     padding: 1rem;
   }
 }
