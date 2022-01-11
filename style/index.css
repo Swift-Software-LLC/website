@@ -389,6 +389,12 @@ footer p:first-of-type {
   margin-bottom: 1rem;
 }
 
+footer img {
+  display: block;
+  width: 40%;
+  margin: 0 auto 0 auto;
+}
+
 
 /* Tablet */
 
@@ -444,6 +450,9 @@ footer p:first-of-type {
   /* Contact */
   #contact {
     width: 50%;
+  }
+  footer img {
+    width: 25%;
   }
 }
 
@@ -501,5 +510,8 @@ footer p:first-of-type {
   #contact {
     width: 20%;
     padding: 1rem;
+  }
+  footer img {
+    width: 10%;
   }
 }
