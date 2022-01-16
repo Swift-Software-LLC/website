@@ -1,0 +1,83 @@
+body {
+  width: 90vw;
+  margin: 0 auto 0 auto;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+section {
+  width: 100%;
+}
+
+#header {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#header h1 {
+  font-size: 2.5rem;
+}
+
+#header p {
+  opacity: 0.75;
+}
+
+#header #gradient-separator {
+  width: 100%;
+  height: 4px;
+  background-image: var(--gradient);
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+#cases {
+  margin-top: 1.5rem;
+}
+
+#cases.grid {
+  gap: 1rem;
+}
+
+#cases .grid__item {
+  background-color: var(--light-gray-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 0px rgb(0 0 0 / 7%), 0px 1px 4px rgb(0 0 0 / 5%), 0px 10px 30px rgb(17 56 31 / 6%);
+}
+
+#cases .grid__item .grid__item__content {
+  margin: 1rem;
+}
+
+#cases .grid__item .grid__item__content img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 30%;
+}
+
+#cases .grid__item .grid__item__content h1 {
+  margin-bottom: 1rem;
+}
+
+#cases .grid__item .grid__item__content p {
+  margin-bottom: 0.75rem;
+}
+
+#cases .grid__item .grid__item__content a {
+  text-align: center;
+}
+
+
+/* Tablet */
+
+@media screen and (min-width: 768px) {}
+
+
+/* Desktop */
+
+@media screen and (min-width: 1200px) {
+  body {
+    width: 60vw;
+  }
+}

@@ -1,3 +1,8 @@
+:root {
+  --gradient: linear-gradient(111deg, #f85d7f, #6b81fa);
+  --light-gray-bg: #edeef0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -27,7 +32,7 @@ p {
 
 .button {
   display: inline-block;
-  background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
+  background-image: var(--gradient);
   padding: 1rem 1rem .75rem 1rem;
   border-radius: .5rem;
   color: #fff;
@@ -43,7 +48,7 @@ p {
 }
 
 .gradient-text {
-  background-image: linear-gradient(111deg, #f85d7f, #6b81fa);
+  background-image: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
