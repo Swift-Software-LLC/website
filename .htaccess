@@ -50,3 +50,6 @@ AddOutputFilterByType DEFLATE application/x-javascripto
       Header set Last-modified "Thu, 13 Jan 2022 18:48:00 CET"
   </IfModule>
 </IfModule>
+
+# Content Security Policy (XSS prevention)
+# Header add Content-Security-Policy "default-src 'self';"

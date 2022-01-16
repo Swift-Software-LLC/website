@@ -102,6 +102,10 @@ section {
   padding-top: 0.5rem;
 }
 
+#splashscreen__content .button {
+  margin-top: 2rem;
+}
+
 
 /* Why a MVP */
 
