@@ -5,11 +5,69 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/global.css">
+  <link rel="stylesheet" href="style/index.css">
   <title>Document</title>
 </head>
 
 <body>
-  <h1>Graphpolaris case</h1>
+  <section id="title">
+    <h1>GraphPolaris</h1>
+    <div class="gradient-separator"></div>
+  </section>
+  <section id="content">
+    <h2>What is GraphPolaris?</h2>
+    <p>
+      GraphPolaris is an innovative platform that gives users the power to perform complex analytical tasks on (knowledge) graphs. It offers many data visualisation methods, including node link diagrams, semantic substrates and PAOHvis.
+    </p>
+    <p>
+      Users can use a simple drag and drop interface to query and analyse their data.
+    </p>
+
+    <h2>The problem:</h2>
+    <p>
+      Unlike relational databases, graph databases have not yet gotten a generalised language (SQL), instead every graph database has its own language. This makes it difficult for users to query and analyse their data.
+    </p>
+    <p>
+      Moreover, graph visualisations often suck, being very cluttered, hard to understand and not providing any real insight. Running machine learning algorithms on your graph data requires specialised knowledge, that is expensive to acquire.
+    </p>
+    <img src="style/img/complex.png" alt="">
+
+    <h2>The solution:</h2>
+    <p>
+      GraphPolaris offers a simple, database agnostic, drag and drop system, allowing users to build complex queries to gain insight from their data.
+    </p>
+    <p>
+      To visualise the data GraphPolaris offers many different visualisation methods, including node link diagrams, semantic substrates and PAOHvis, among others.
+    </p>
+    <p>
+      Machine learning algorithms can also be run on your data, automatically. GraphPolaris offers common ML algorithms like shortest path, clustering, centrality, link prediction and node attribute prediction.
+    </p>
+
+    <div class="gradient-separator"></div>
+
+    <h2>What we built:</h2>
+    <p>
+      We built a a fast and very scalable backend system using Go, and a React frontend. The backend uses a microservice architecture to allow independant service scaling, easier future expansion and better decoupling.
+    </p>
+    <p>
+      Due to the asychronous nature of sending queries (taking seconds, or minutes to complete) we built the backend to be fully asynchronous. This means we use a message broker (RabbitMQ) to send messages between the services, and once a result is ready it
+      is sent to the frontend via a persistent websocket connection.
+    </p>
+    <p>
+      Using RabbitMQ also gave us more resiliency, as if a service goes down while processing messages, these messages are sent to the next available service.
+    </p>
+    <p>
+      One of the more challenging parts of the project was building the query converters. These converters take in our format sent from the visual query builder, and translate this format into an actual query in the database' query language. We built two converters,
+      one for ArangoDB (AQL), and one for Neo4j (Cypher).
+    </p>
+    <p>
+      View more info on <a href="https://www.graphpolaris.com">www.graphpolaris.com</a>
+    </p>
+
+
+  </section>
+
 </body>
 
 </html>

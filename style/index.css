@@ -106,7 +106,7 @@ section {
 
 #timeline {
   width: 75%;
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto 0 auto;
 }
 
 .timeline__item p {

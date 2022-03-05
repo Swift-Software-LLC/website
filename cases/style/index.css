@@ -24,7 +24,7 @@ section {
   opacity: 0.75;
 }
 
-#header #gradient-separator {
+.gradient-separator {
   width: 100%;
   height: 4px;
   background-image: var(--gradient);
@@ -40,14 +40,8 @@ section {
   gap: 1rem;
 }
 
-#cases .grid__item {
-  background-color: var(--light-gray-bg);
-  border-radius: 0.5rem;
-  box-shadow: 0px 1px 0px rgb(0 0 0 / 7%), 0px 1px 4px rgb(0 0 0 / 5%), 0px 10px 30px rgb(17 56 31 / 6%);
-}
-
 #cases .grid__item .grid__item__content {
-  margin: 1rem;
+  margin: 3rem 1rem;
 }
 
 #cases .grid__item .grid__item__content img {
@@ -69,15 +63,71 @@ section {
 }
 
 
+/* Case page styling */
+
+#title {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#title img {
+  display: block;
+  margin: 0 auto 2rem auto;
+  width: 40%;
+}
+
+#title h1 {
+  font-size: 2.5rem;
+}
+
+#content {
+  margin-bottom: 5em;
+}
+
+#content h2 {
+  margin-top: 2rem;
+}
+
+#content p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+#content img {
+  display: block;
+  margin: 1rem auto 1rem auto;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+#tech-challenges {
+  margin-top: 2rem;
+  background-color: var(--light-gray-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 0px rgb(0 0 0 / 7%), 0px 1px 4px rgb(0 0 0 / 5%), 0px 10px 30px rgb(17 56 31 / 6%);
+}
+
+#tech-challenges #tech-challenges__content {
+  padding: 1rem;
+}
+
+
 /* Tablet */
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  body {
+    width: 60vw;
+  }
+  #content img {
+    width: 75%;
+  }
+}
 
 
 /* Desktop */
 
 @media screen and (min-width: 1200px) {
   body {
-    width: 60vw;
+    width: 30vw;
   }
 }
